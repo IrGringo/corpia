@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculateur de fréquence cardiaque cible — Corpia</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<!-- Google AdSense : remplace ca-pub-XXXXXXXXXXXXXXXX par ton identifiant éditeur une fois ton compte approuvé -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">
+      <img class="logo-mark" src="assets/logo-icon.png" alt="Corpia">
+      <span>Corpia</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Accueil</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" type="button">Nos outils</button>
+        <div class="nav-dropdown-menu">
+          <p class="nav-dropdown-cat">Nutrition &amp; énergie</p>
+          <a href="calories.html">Besoins caloriques</a>
+          <a href="eau.html">Eau à boire par jour</a>
+          <p class="nav-dropdown-cat">Corps &amp; forme physique</p>
+          <a href="poids-ideal.html">Poids idéal</a>
+          <a href="masse-grasse.html">Masse grasse</a>
+          <a href="frequence-cardiaque.html">Fréquence cardiaque</a>
+          <p class="nav-dropdown-cat">Grossesse</p>
+          <a href="grossesse-dpa.html">Date d'accouchement</a>
+          <a href="grossesse-ovulation.html">Ovulation</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header class="page-head">
+    <p class="kicker">Corps &amp; forme physique</p>
+    <h1>Quelles sont vos zones de fréquence cardiaque ?</h1>
+    <p class="lede">Trouvez vos zones d'entraînement — de la récupération active à l'effort maximal — pour mieux calibrer vos séances.</p>
+  </header>
+
+  <div class="layout">
+    <div>
+      <div class="field">
+        <label for="age">Âge (années)</label>
+        <input type="number" id="age" value="30" min="10" max="100">
+      </div>
+    </div>
+
+    <div class="panel">
+      <p class="panel-title">Vos zones cibles</p>
+      <p class="panel-sub">Fréquence cardiaque maximale théorique : <span id="maxhr">—</span> bpm</p>
+
+      <div class="goal-row"><span class="goal-tag">Récupération (50–60 %)</span><span class="goal-kcal" id="z1">—</span></div>
+      <div class="goal-row"><span class="goal-tag">Combustion des graisses (60–70 %)</span><span class="goal-kcal" id="z2">—</span></div>
+      <div class="goal-row"><span class="goal-tag">Cardio / endurance (70–80 %)</span><span class="goal-kcal" id="z3">—</span></div>
+      <div class="goal-row"><span class="goal-tag">Seuil anaérobie (80–90 %)</span><span class="goal-kcal" id="z4">—</span></div>
+      <div class="goal-row"><span class="goal-tag">Effort maximal (90–100 %)</span><span class="goal-kcal" id="z5">—</span></div>
+
+      <div class="tip-box visible" id="tip"><strong>Conseil —</strong> Si vous débutez le sport, privilégiez la zone cardio (70–80 %) plutôt que les zones élevées, pour progresser sans risquer l'épuisement.</div>
+
+      <p class="disclaimer">Ces zones sont des repères théoriques. Consultez un médecin avant de débuter un entraînement intense, surtout en cas d'antécédents cardiaques.</p>
+    </div>
+  </div>
+
+  <div class="ad-slot">
+    <p class="ad-label">Publicité</p>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="XXXXXXXXXX"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <article>
+    <h2>Comment ce calcul fonctionne</h2>
+    <p>La fréquence cardiaque maximale théorique est estimée par la formule 220 moins l'âge. Chaque zone d'entraînement correspond ensuite à un pourcentage de cette valeur, et cible un type d'effort différent — de la récupération légère à l'effort au seuil.</p>
+    <p>S'entraîner majoritairement en zone cardio (70–80 %) est généralement recommandé pour développer l'endurance de base, tandis que les zones plus hautes servent au travail de puissance et de vitesse.</p>
+
+    <h2>Questions fréquentes</h2>
+    <div class="faq-item">
+      <h3>La formule 220 − âge est-elle précise ?</h3>
+      <p>Elle reste une moyenne statistique avec une marge d'erreur individuelle non négligeable. Un test d'effort en laboratoire donne une valeur plus précise si vous en avez besoin pour un entraînement sérieux.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Dans quelle zone dois-je m'entraîner pour maigrir ?</h3>
+      <p>La zone "combustion des graisses" brûle proportionnellement plus de lipides, mais la zone cardio brûle davantage de calories au total — le choix dépend de votre objectif global, pas uniquement de cette proportion.</p>
+    </div>
+  </article>
+
+  <div class="related">
+    <h2>Continuez avec ces outils</h2>
+    <div class="related-grid">
+      <a class="related-card" href="calories.html"><p class="cat">Nutrition</p><p class="name">Besoins caloriques</p></a>
+      <a class="related-card" href="eau.html"><p class="cat">Nutrition</p><p class="name">Eau à boire par jour</p></a>
+      <a class="related-card" href="masse-grasse.html"><p class="cat">Forme physique</p><p class="name">Masse grasse</p></a>
+    </div>
+  </div>
+  <div class="ad-slot">
+    <p class="ad-label">Publicité</p>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="XXXXXXXXXX"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <a class="nav-brand" href="index.html">
+          <img class="logo-mark" src="assets/logo-icon.png" alt="Corpia">
+          <span>Corpia</span>
+        </a>
+        <p class="footer-tagline">Des calculateurs simples pour mieux comprendre votre corps — nutrition, forme physique et grossesse.</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">Nutrition &amp; énergie</p>
+        <a href="calories.html">Besoins caloriques</a>
+        <a href="eau.html">Eau à boire par jour</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">Forme physique</p>
+        <a href="poids-ideal.html">Poids idéal</a>
+        <a href="masse-grasse.html">Masse grasse</a>
+        <a href="frequence-cardiaque.html">Fréquence cardiaque</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">Grossesse</p>
+        <a href="grossesse-dpa.html">Date d'accouchement</a>
+        <a href="grossesse-ovulation.html">Ovulation</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Corpia. Tous les résultats sont des estimations informatives et ne remplacent pas un avis médical professionnel.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function calculate() {
+    const age = parseFloat(document.getElementById('age').value) || 0;
+    if (!age) return;
+    const max = 220 - age;
+    document.getElementById('maxhr').textContent = Math.round(max);
+    const zone = (lo, hi) => Math.round(max * lo) + ' – ' + Math.round(max * hi) + ' bpm';
+    document.getElementById('z1').textContent = zone(0.5, 0.6);
+    document.getElementById('z2').textContent = zone(0.6, 0.7);
+    document.getElementById('z3').textContent = zone(0.7, 0.8);
+    document.getElementById('z4').textContent = zone(0.8, 0.9);
+    document.getElementById('z5').textContent = zone(0.9, 1.0);
+  }
+  document.getElementById('age').addEventListener('input', calculate);
+  calculate();
+</script>
+
+</body>
+</html>

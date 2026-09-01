@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculateur de date d'accouchement — Corpia</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<!-- Google AdSense : remplace ca-pub-XXXXXXXXXXXXXXXX par ton identifiant éditeur une fois ton compte approuvé -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">
+      <img class="logo-mark" src="assets/logo-icon.png" alt="Corpia">
+      <span>Corpia</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Accueil</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" type="button">Nos outils</button>
+        <div class="nav-dropdown-menu">
+          <p class="nav-dropdown-cat">Nutrition &amp; énergie</p>
+          <a href="calories.html">Besoins caloriques</a>
+          <a href="eau.html">Eau à boire par jour</a>
+          <p class="nav-dropdown-cat">Corps &amp; forme physique</p>
+          <a href="poids-ideal.html">Poids idéal</a>
+          <a href="masse-grasse.html">Masse grasse</a>
+          <a href="frequence-cardiaque.html">Fréquence cardiaque</a>
+          <p class="nav-dropdown-cat">Grossesse</p>
+          <a href="grossesse-dpa.html">Date d'accouchement</a>
+          <a href="grossesse-ovulation.html">Ovulation</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header class="page-head">
+    <p class="kicker">Grossesse</p>
+    <h1>Quelle est votre date prévue d'accouchement ?</h1>
+    <p class="lede">À partir de la date de vos dernières règles, estimez votre terme et suivez l'avancée de votre grossesse semaine par semaine.</p>
+  </header>
+
+  <div class="layout">
+    <div>
+      <div class="field">
+        <label for="lmp">Date des dernières règles</label>
+        <input type="date" id="lmp">
+      </div>
+      <div class="field">
+        <label for="cycle">Durée moyenne de votre cycle (jours)</label>
+        <input type="number" id="cycle" value="28" min="21" max="40">
+        <p class="field-hint">28 jours est la durée standard utilisée si vous ne connaissez pas la vôtre.</p>
+      </div>
+    </div>
+
+    <div class="panel">
+      <p class="panel-title">Votre estimation</p>
+      <p class="panel-sub">Basé sur la règle de Naegele, la méthode standard en obstétrique</p>
+
+      <div class="metric-row big">
+        <span class="metric-label">Date prévue d'accouchement<small>Terme théorique à 40 semaines</small></span>
+        <span class="metric-value" id="dpa">—</span>
+      </div>
+      <div class="goals">
+        <div class="goal-row"><span class="goal-tag">Semaine de grossesse actuelle</span><span class="goal-kcal" id="week">—</span></div>
+        <div class="goal-row"><span class="goal-tag">Trimestre</span><span class="goal-kcal" id="trimester">—</span></div>
+      </div>
+      <div class="tip-box" id="tip"></div>
+
+      <p class="disclaimer">Seuls 5 % des bébés naissent exactement à la date prévue. Cette estimation reste indicative — votre suivi médical affinera la date au fil de la grossesse.</p>
+    </div>
+  </div>
+
+  <div class="ad-slot">
+    <p class="ad-label">Publicité</p>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="XXXXXXXXXX"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <article>
+    <h2>Comment ce calcul fonctionne</h2>
+    <p>La règle de Naegele ajoute 280 jours (40 semaines) à la date du premier jour des dernières règles, en supposant un cycle de 28 jours avec ovulation au 14ᵉ jour. Si votre cycle est plus long ou plus court, la date est ajustée en conséquence.</p>
+    <p>Cette méthode reste une estimation de départ : l'échographie du premier trimestre, réalisée entre 11 et 14 semaines, permet généralement d'affiner la date avec plus de précision.</p>
+
+    <h2>Questions fréquentes</h2>
+    <div class="faq-item">
+      <h3>Pourquoi ma sage-femme donne-t-elle une date différente ?</h3>
+      <p>Les professionnels de santé se basent souvent sur la mesure échographique, plus précise que le seul calcul des dates lorsque le cycle est irrégulier.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Que se passe-t-il si je ne connais pas la date exacte de mes dernières règles ?</h3>
+      <p>Une échographie précoce permettra d'estimer l'âge gestationnel à partir de la taille de l'embryon, indépendamment de cette date.</p>
+    </div>
+  </article>
+
+  <div class="related">
+    <h2>Continuez avec ces outils</h2>
+    <div class="related-grid">
+      <a class="related-card" href="grossesse-ovulation.html"><p class="cat">Grossesse</p><p class="name">Calculateur d'ovulation</p></a>
+      <a class="related-card" href="calories.html"><p class="cat">Nutrition</p><p class="name">Besoins caloriques</p></a>
+      <a class="related-card" href="eau.html"><p class="cat">Nutrition</p><p class="name">Eau à boire par jour</p></a>
+    </div>
+  </div>
+  <div class="ad-slot">
+    <p class="ad-label">Publicité</p>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="XXXXXXXXXX"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <a class="nav-brand" href="index.html">
+          <img class="logo-mark" src="assets/logo-icon.png" alt="Corpia">
+          <span>Corpia</span>
+        </a>
+        <p class="footer-tagline">Des calculateurs simples pour mieux comprendre votre corps — nutrition, forme physique et grossesse.</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">Nutrition &amp; énergie</p>
+        <a href="calories.html">Besoins caloriques</a>
+        <a href="eau.html">Eau à boire par jour</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">Forme physique</p>
+        <a href="poids-ideal.html">Poids idéal</a>
+        <a href="masse-grasse.html">Masse grasse</a>
+        <a href="frequence-cardiaque.html">Fréquence cardiaque</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">Grossesse</p>
+        <a href="grossesse-dpa.html">Date d'accouchement</a>
+        <a href="grossesse-ovulation.html">Ovulation</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Corpia. Tous les résultats sont des estimations informatives et ne remplacent pas un avis médical professionnel.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function calculate() {
+    const lmpVal = document.getElementById('lmp').value;
+    const cycle = parseFloat(document.getElementById('cycle').value) || 28;
+    if (!lmpVal) return;
+
+    const lmp = new Date(lmpVal + 'T00:00:00');
+    const adjustment = cycle - 28;
+    const dpa = new Date(lmp);
+    dpa.setDate(dpa.getDate() + 280 + adjustment);
+
+    const today = new Date();
+    const diffDays = Math.floor((today - lmp) / (1000 * 60 * 60 * 24));
+    const weeks = Math.floor(diffDays / 7);
+    const days = diffDays % 7;
+
+    let trimester = '—';
+    if (diffDays >= 0) {
+      if (weeks < 14) trimester = '1er trimestre';
+      else if (weeks < 28) trimester = '2ème trimestre';
+      else trimester = '3ème trimestre';
+    }
+
+    const options = { day: 'numeric', month: 'long', year: 'numeric' };
+    document.getElementById('dpa').textContent = dpa.toLocaleDateString('fr-FR', options);
+    document.getElementById('week').textContent = diffDays >= 0 ? weeks + ' semaines et ' + days + ' jours' : '—';
+    document.getElementById('trimester').textContent = trimester;
+
+    const tip = document.getElementById('tip');
+    let msg;
+    if (trimester === '1er trimestre') {
+      msg = '<strong>Conseil —</strong> C\'est le moment de planifier la première échographie, généralement réalisée entre 11 et 14 semaines.';
+    } else if (trimester === '2ème trimestre') {
+      msg = '<strong>Conseil —</strong> L\'échographie morphologique a lieu autour de 22 semaines — pensez à la programmer si ce n\'est pas déjà fait.';
+    } else if (trimester === '3ème trimestre') {
+      msg = '<strong>Conseil —</strong> C\'est le moment de préparer votre valise de maternité et de discuter du plan de naissance avec votre équipe médicale.';
+    } else {
+      msg = '<strong>Conseil —</strong> Une fois la grossesse confirmée, planifiez rapidement votre première consultation de suivi.';
+    }
+    tip.innerHTML = msg;
+    tip.classList.add('visible');
+  }
+  document.getElementById('lmp').addEventListener('input', calculate);
+  document.getElementById('cycle').addEventListener('input', calculate);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculateur de poids idéal — Corpia</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<!-- Google AdSense : remplace ca-pub-XXXXXXXXXXXXXXXX par ton identifiant éditeur une fois ton compte approuvé -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">
+      <img class="logo-mark" src="assets/logo-icon.png" alt="Corpia">
+      <span>Corpia</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Accueil</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" type="button">Nos outils</button>
+        <div class="nav-dropdown-menu">
+          <p class="nav-dropdown-cat">Nutrition &amp; énergie</p>
+          <a href="calories.html">Besoins caloriques</a>
+          <a href="eau.html">Eau à boire par jour</a>
+          <p class="nav-dropdown-cat">Corps &amp; forme physique</p>
+          <a href="poids-ideal.html">Poids idéal</a>
+          <a href="masse-grasse.html">Masse grasse</a>
+          <a href="frequence-cardiaque.html">Fréquence cardiaque</a>
+          <p class="nav-dropdown-cat">Grossesse</p>
+          <a href="grossesse-dpa.html">Date d'accouchement</a>
+          <a href="grossesse-ovulation.html">Ovulation</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header class="page-head">
+    <p class="kicker">Corps &amp; forme physique</p>
+    <h1>Quel est votre poids idéal ?</h1>
+    <p class="lede">Une estimation de référence selon votre taille et votre sexe, à utiliser comme repère plutôt que comme objectif strict.</p>
+  </header>
+
+  <div class="layout">
+    <div>
+      <div class="field">
+        <label>Sexe</label>
+        <div class="toggle-group">
+          <button type="button" id="btn-h" class="active" onclick="setSex('h')">Homme</button>
+          <button type="button" id="btn-f" onclick="setSex('f')">Femme</button>
+        </div>
+      </div>
+      <div class="field">
+        <label for="height">Taille (cm)</label>
+        <input type="number" id="height" value="170" min="120" max="230">
+      </div>
+    </div>
+
+    <div class="panel">
+      <p class="panel-title">Votre estimation</p>
+      <p class="panel-sub">Basé sur la formule de Lorentz, une référence historique en médecine</p>
+
+      <div class="metric-row big">
+        <span class="metric-label">Poids de référence<small>Estimation ponctuelle</small></span>
+        <span class="metric-value" id="ideal">—</span>
+      </div>
+      <div class="goals">
+        <div class="goal-row"><span class="goal-tag">Fourchette raisonnable (±10 %)</span><span class="goal-kcal" id="range">—</span></div>
+      </div>
+      <div class="tip-box visible" id="tip"><strong>Conseil —</strong> Ce chiffre reste un repère statistique. Le calculateur de masse grasse donne une image plus fine de votre composition corporelle réelle.</div>
+
+      <p class="disclaimer">Le poids idéal est une notion approximative — la morphologie, la masse musculaire et l'ossature varient d'une personne à l'autre. Cette estimation ne constitue pas un objectif médical.</p>
+    </div>
+  </div>
+
+  <div class="ad-slot">
+    <p class="ad-label">Publicité</p>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="XXXXXXXXXX"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <article>
+    <h2>Comment ce calcul fonctionne</h2>
+    <p>La formule de Lorentz, développée au XIXe siècle, reste l'une des plus utilisées pour estimer un poids de référence à partir de la seule taille. Elle tient compte du fait que les femmes ont, en moyenne, une masse osseuse et musculaire différente de celle des hommes à taille égale.</p>
+    <p>Cette estimation ne remplace pas une évaluation complète, qui prendrait en compte la masse musculaire, la répartition des graisses et la morphologie individuelle.</p>
+
+    <h2>Questions fréquentes</h2>
+    <div class="faq-item">
+      <h3>Pourquoi ce chiffre diffère-t-il de l'IMC ?</h3>
+      <p>L'IMC se base uniquement sur le rapport poids/taille, alors que la formule de Lorentz intègre une référence différente selon le sexe. Les deux sont des approximations, pas des diagnostics.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Un sportif musclé peut-il dépasser ce poids ?</h3>
+      <p>Oui, sans que cela pose problème. La masse musculaire pèse plus lourd que la masse grasse à volume égal — le calculateur de masse grasse donne une image plus fine dans ce cas.</p>
+    </div>
+  </article>
+
+  <div class="related">
+    <h2>Continuez avec ces outils</h2>
+    <div class="related-grid">
+      <a class="related-card" href="masse-grasse.html"><p class="cat">Forme physique</p><p class="name">Masse grasse</p></a>
+      <a class="related-card" href="calories.html"><p class="cat">Nutrition</p><p class="name">Besoins caloriques</p></a>
+      <a class="related-card" href="eau.html"><p class="cat">Nutrition</p><p class="name">Eau à boire par jour</p></a>
+    </div>
+  </div>
+  <div class="ad-slot">
+    <p class="ad-label">Publicité</p>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="XXXXXXXXXX"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <a class="nav-brand" href="index.html">
+          <img class="logo-mark" src="assets/logo-icon.png" alt="Corpia">
+          <span>Corpia</span>
+        </a>
+        <p class="footer-tagline">Des calculateurs simples pour mieux comprendre votre corps — nutrition, forme physique et grossesse.</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">Nutrition &amp; énergie</p>
+        <a href="calories.html">Besoins caloriques</a>
+        <a href="eau.html">Eau à boire par jour</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">Forme physique</p>
+        <a href="poids-ideal.html">Poids idéal</a>
+        <a href="masse-grasse.html">Masse grasse</a>
+        <a href="frequence-cardiaque.html">Fréquence cardiaque</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">Grossesse</p>
+        <a href="grossesse-dpa.html">Date d'accouchement</a>
+        <a href="grossesse-ovulation.html">Ovulation</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Corpia. Tous les résultats sont des estimations informatives et ne remplacent pas un avis médical professionnel.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  let sex = 'h';
+  function setSex(s) {
+    sex = s;
+    document.getElementById('btn-h').classList.toggle('active', s === 'h');
+    document.getElementById('btn-f').classList.toggle('active', s === 'f');
+    calculate();
+  }
+  function calculate() {
+    const height = parseFloat(document.getElementById('height').value) || 0;
+    if (!height) return;
+    const divisor = sex === 'h' ? 4 : 2.5;
+    const ideal = height - 100 - ((height - 150) / divisor);
+    const low = ideal * 0.9;
+    const high = ideal * 1.1;
+    document.getElementById('ideal').textContent = Math.round(ideal).toLocaleString('fr-FR') + ' kg';
+    document.getElementById('range').textContent = Math.round(low) + ' – ' + Math.round(high) + ' kg';
+  }
+  ['height'].forEach(id => {
+    document.getElementById(id).addEventListener('input', calculate);
+  });
+  calculate();
+</script>
+
+</body>
+</html>

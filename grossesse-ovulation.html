@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculateur d'ovulation — Corpia</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<!-- Google AdSense : remplace ca-pub-XXXXXXXXXXXXXXXX par ton identifiant éditeur une fois ton compte approuvé -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">
+      <img class="logo-mark" src="assets/logo-icon.png" alt="Corpia">
+      <span>Corpia</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Accueil</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" type="button">Nos outils</button>
+        <div class="nav-dropdown-menu">
+          <p class="nav-dropdown-cat">Nutrition &amp; énergie</p>
+          <a href="calories.html">Besoins caloriques</a>
+          <a href="eau.html">Eau à boire par jour</a>
+          <p class="nav-dropdown-cat">Corps &amp; forme physique</p>
+          <a href="poids-ideal.html">Poids idéal</a>
+          <a href="masse-grasse.html">Masse grasse</a>
+          <a href="frequence-cardiaque.html">Fréquence cardiaque</a>
+          <p class="nav-dropdown-cat">Grossesse</p>
+          <a href="grossesse-dpa.html">Date d'accouchement</a>
+          <a href="grossesse-ovulation.html">Ovulation</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header class="page-head">
+    <p class="kicker">Grossesse</p>
+    <h1>Quand aurez-vous votre prochaine ovulation ?</h1>
+    <p class="lede">Identifiez votre fenêtre de fertilité à partir de la date de vos dernières règles et de la durée de votre cycle.</p>
+  </header>
+
+  <div class="layout">
+    <div>
+      <div class="field">
+        <label for="lmp">Premier jour des dernières règles</label>
+        <input type="date" id="lmp">
+      </div>
+      <div class="field">
+        <label for="cycle">Durée moyenne de votre cycle (jours)</label>
+        <input type="number" id="cycle" value="28" min="21" max="40">
+      </div>
+    </div>
+
+    <div class="panel">
+      <p class="panel-title">Votre estimation</p>
+      <p class="panel-sub">Basé sur une ovulation survenant 14 jours avant les règles suivantes</p>
+
+      <div class="metric-row big">
+        <span class="metric-label">Date d'ovulation estimée<small>Jour le plus fertile</small></span>
+        <span class="metric-value" id="ovulation">—</span>
+      </div>
+      <div class="goals">
+        <div class="goal-row"><span class="goal-tag">Fenêtre de fertilité</span><span class="goal-kcal" id="window">—</span></div>
+        <div class="goal-row"><span class="goal-tag">Prochaines règles estimées</span><span class="goal-kcal" id="nextperiod">—</span></div>
+      </div>
+      <div class="tip-box visible" id="tip"><strong>Conseil —</strong> Pour affiner cette estimation, combinez-la avec un suivi de la glaire cervicale ou un test d'ovulation en pharmacie sur 2 à 3 cycles.</div>
+
+      <p class="disclaimer">Ce calcul est une estimation statistique. Elle ne remplace pas un suivi de température basale, un test d'ovulation ou un avis médical pour un projet de grossesse précis.</p>
+    </div>
+  </div>
+
+  <div class="ad-slot">
+    <p class="ad-label">Publicité</p>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="XXXXXXXXXX"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <article>
+    <h2>Comment ce calcul fonctionne</h2>
+    <p>Dans un cycle régulier, l'ovulation survient généralement 14 jours avant le début des règles suivantes, quelle que soit la durée totale du cycle. Ce calculateur applique cette règle à la durée de cycle que vous renseignez.</p>
+    <p>La fenêtre de fertilité comprend les cinq jours précédant l'ovulation, ainsi que le jour de l'ovulation lui-même — les spermatozoïdes pouvant survivre plusieurs jours dans les voies génitales.</p>
+
+    <h2>Questions fréquentes</h2>
+    <div class="faq-item">
+      <h3>Mon cycle est irrégulier, ce calcul est-il fiable ?</h3>
+      <p>Moins il l'est. Un suivi de la température basale ou des tests d'ovulation en pharmacie donneront une estimation plus fiable en cas de cycles irréguliers.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Peut-on tomber enceinte en dehors de cette fenêtre ?</h3>
+      <p>C'est rare mais pas impossible, notamment en cas de cycle irrégulier ou d'ovulation précoce ou tardive imprévue.</p>
+    </div>
+  </article>
+
+  <div class="related">
+    <h2>Continuez avec ces outils</h2>
+    <div class="related-grid">
+      <a class="related-card" href="grossesse-dpa.html"><p class="cat">Grossesse</p><p class="name">Date d'accouchement</p></a>
+      <a class="related-card" href="calories.html"><p class="cat">Nutrition</p><p class="name">Besoins caloriques</p></a>
+      <a class="related-card" href="eau.html"><p class="cat">Nutrition</p><p class="name">Eau à boire par jour</p></a>
+    </div>
+  </div>
+  <div class="ad-slot">
+    <p class="ad-label">Publicité</p>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="XXXXXXXXXX"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <a class="nav-brand" href="index.html">
+          <img class="logo-mark" src="assets/logo-icon.png" alt="Corpia">
+          <span>Corpia</span>
+        </a>
+        <p class="footer-tagline">Des calculateurs simples pour mieux comprendre votre corps — nutrition, forme physique et grossesse.</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">Nutrition &amp; énergie</p>
+        <a href="calories.html">Besoins caloriques</a>
+        <a href="eau.html">Eau à boire par jour</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">Forme physique</p>
+        <a href="poids-ideal.html">Poids idéal</a>
+        <a href="masse-grasse.html">Masse grasse</a>
+        <a href="frequence-cardiaque.html">Fréquence cardiaque</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">Grossesse</p>
+        <a href="grossesse-dpa.html">Date d'accouchement</a>
+        <a href="grossesse-ovulation.html">Ovulation</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Corpia. Tous les résultats sont des estimations informatives et ne remplacent pas un avis médical professionnel.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function calculate() {
+    const lmpVal = document.getElementById('lmp').value;
+    const cycle = parseFloat(document.getElementById('cycle').value) || 28;
+    if (!lmpVal) return;
+
+    const lmp = new Date(lmpVal + 'T00:00:00');
+    const ovulation = new Date(lmp);
+    ovulation.setDate(ovulation.getDate() + (cycle - 14));
+
+    const windowStart = new Date(ovulation);
+    windowStart.setDate(windowStart.getDate() - 5);
+    const windowEnd = new Date(ovulation);
+    windowEnd.setDate(windowEnd.getDate() + 1);
+
+    const nextPeriod = new Date(lmp);
+    nextPeriod.setDate(nextPeriod.getDate() + cycle);
+
+    const options = { day: 'numeric', month: 'long' };
+    const optionsFull = { day: 'numeric', month: 'long', year: 'numeric' };
+    document.getElementById('ovulation').textContent = ovulation.toLocaleDateString('fr-FR', optionsFull);
+    document.getElementById('window').textContent = windowStart.toLocaleDateString('fr-FR', options) + ' au ' + windowEnd.toLocaleDateString('fr-FR', options);
+    document.getElementById('nextperiod').textContent = nextPeriod.toLocaleDateString('fr-FR', optionsFull);
+  }
+  document.getElementById('lmp').addEventListener('input', calculate);
+  document.getElementById('cycle').addEventListener('input', calculate);
+</script>
+
+</body>
+</html>

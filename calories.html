@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculateur de besoins caloriques journaliers — Corpia</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<!-- Google AdSense : remplace ca-pub-XXXXXXXXXXXXXXXX par ton identifiant éditeur une fois ton compte approuvé -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">
+      <img class="logo-mark" src="assets/logo-icon.png" alt="Corpia">
+      <span>Corpia</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Accueil</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" type="button">Nos outils</button>
+        <div class="nav-dropdown-menu">
+          <p class="nav-dropdown-cat">Nutrition &amp; énergie</p>
+          <a href="calories.html">Besoins caloriques</a>
+          <a href="eau.html">Eau à boire par jour</a>
+          <p class="nav-dropdown-cat">Corps &amp; forme physique</p>
+          <a href="poids-ideal.html">Poids idéal</a>
+          <a href="masse-grasse.html">Masse grasse</a>
+          <a href="frequence-cardiaque.html">Fréquence cardiaque</a>
+          <p class="nav-dropdown-cat">Grossesse</p>
+          <a href="grossesse-dpa.html">Date d'accouchement</a>
+          <a href="grossesse-ovulation.html">Ovulation</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header class="page-head">
+    <p class="kicker">Nutrition &amp; énergie</p>
+    <h1>Combien de calories devriez-vous manger chaque jour ?</h1>
+    <p class="lede">Renseignez vos mesures pour estimer votre métabolisme de base et vos besoins caloriques réels selon votre niveau d'activité.</p>
+  </header>
+
+  <div class="layout">
+    <div>
+      <div class="field">
+        <label>Sexe</label>
+        <div class="toggle-group">
+          <button type="button" id="btn-h" class="active" onclick="setSex('h')">Homme</button>
+          <button type="button" id="btn-f" onclick="setSex('f')">Femme</button>
+        </div>
+      </div>
+      <div class="field">
+        <label for="age">Âge (années)</label>
+        <input type="number" id="age" value="30" min="15" max="100">
+      </div>
+      <div class="field">
+        <label for="height">Taille (cm)</label>
+        <input type="number" id="height" value="170" min="120" max="230">
+      </div>
+      <div class="field">
+        <label for="weight">Poids (kg)</label>
+        <input type="number" id="weight" value="70" min="30" max="250">
+      </div>
+      <div class="field">
+        <label for="activity">Niveau d'activité</label>
+        <select id="activity">
+          <option value="1.2">Sédentaire — peu ou pas d'exercice</option>
+          <option value="1.375">Légèrement actif — sport 1 à 3 j/semaine</option>
+          <option value="1.55" selected>Modérément actif — sport 3 à 5 j/semaine</option>
+          <option value="1.725">Très actif — sport 6 à 7 j/semaine</option>
+          <option value="1.9">Extrêmement actif — travail physique + sport</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="panel">
+      <p class="panel-title">Vos résultats</p>
+      <p class="panel-sub">Basé sur la formule de Mifflin-St Jeor, la référence utilisée en nutrition clinique</p>
+
+      <div class="metric-row">
+        <span class="metric-label">Métabolisme de base<small>Énergie brûlée au repos</small></span>
+        <span class="metric-value" id="bmr">—</span>
+      </div>
+      <div class="metric-row big">
+        <span class="metric-label">Besoins journaliers<small>Selon votre niveau d'activité</small></span>
+        <span class="metric-value" id="tdee">—</span>
+      </div>
+      <div class="goals">
+        <div class="goal-row"><span class="goal-tag">Perte de poids (−15 %)</span><span class="goal-kcal" id="goal-loss">—</span></div>
+        <div class="goal-row"><span class="goal-tag">Maintien du poids</span><span class="goal-kcal" id="goal-maintain">—</span></div>
+        <div class="goal-row"><span class="goal-tag">Prise de poids (+15 %)</span><span class="goal-kcal" id="goal-gain">—</span></div>
+      </div>
+      <div class="tip-box" id="tip"></div>
+
+      <p class="disclaimer">Ceci est une estimation à but informatif, pas un avis médical. Consultez un professionnel de santé avant de modifier significativement votre alimentation.</p>
+    </div>
+  </div>
+
+  <div class="ad-slot">
+    <p class="ad-label">Publicité</p>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="XXXXXXXXXX"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <article>
+    <h2>Comment ce calcul fonctionne</h2>
+    <p>Votre métabolisme de base représente l'énergie que votre corps consomme au repos strict, pour faire fonctionner le cœur, les poumons et le cerveau. Ce calculateur utilise la formule de Mifflin-St Jeor, publiée en 1990 et aujourd'hui considérée comme la plus précise pour la population générale.</p>
+    <p>Ce chiffre est ensuite multiplié par un facteur d'activité pour estimer votre dépense énergétique totale — le nombre de calories que vous brûlez réellement chaque jour, travail, déplacements et sport compris.</p>
+
+    <h2>Questions fréquentes</h2>
+    <div class="faq-item">
+      <h3>Ce chiffre est-il exact à la calorie près ?</h3>
+      <p>Non. Aucune formule ne remplace un examen en laboratoire. Utilisez ce résultat comme point de départ, à ajuster selon l'évolution réelle de votre poids sur 2 à 3 semaines.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Pourquoi un déficit de 15 % pour perdre du poids ?</h3>
+      <p>Un déficit modéré permet une perte progressive tout en limitant la fonte musculaire et la faim excessive, contrairement à des déficits trop agressifs.</p>
+    </div>
+  </article>
+
+  <div class="related">
+    <h2>Continuez avec ces outils</h2>
+    <div class="related-grid">
+      <a class="related-card" href="eau.html"><p class="cat">Nutrition</p><p class="name">Eau à boire par jour</p></a>
+      <a class="related-card" href="frequence-cardiaque.html"><p class="cat">Forme physique</p><p class="name">Fréquence cardiaque cible</p></a>
+      <a class="related-card" href="masse-grasse.html"><p class="cat">Forme physique</p><p class="name">Masse grasse</p></a>
+    </div>
+  </div>
+  <div class="ad-slot">
+    <p class="ad-label">Publicité</p>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="XXXXXXXXXX"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <a class="nav-brand" href="index.html">
+          <img class="logo-mark" src="assets/logo-icon.png" alt="Corpia">
+          <span>Corpia</span>
+        </a>
+        <p class="footer-tagline">Des calculateurs simples pour mieux comprendre votre corps — nutrition, forme physique et grossesse.</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">Nutrition &amp; énergie</p>
+        <a href="calories.html">Besoins caloriques</a>
+        <a href="eau.html">Eau à boire par jour</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">Forme physique</p>
+        <a href="poids-ideal.html">Poids idéal</a>
+        <a href="masse-grasse.html">Masse grasse</a>
+        <a href="frequence-cardiaque.html">Fréquence cardiaque</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">Grossesse</p>
+        <a href="grossesse-dpa.html">Date d'accouchement</a>
+        <a href="grossesse-ovulation.html">Ovulation</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Corpia. Tous les résultats sont des estimations informatives et ne remplacent pas un avis médical professionnel.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  let sex = 'h';
+  function setSex(s) {
+    sex = s;
+    document.getElementById('btn-h').classList.toggle('active', s === 'h');
+    document.getElementById('btn-f').classList.toggle('active', s === 'f');
+    calculate();
+  }
+  function calculate() {
+    const age = parseFloat(document.getElementById('age').value) || 0;
+    const height = parseFloat(document.getElementById('height').value) || 0;
+    const weight = parseFloat(document.getElementById('weight').value) || 0;
+    const activity = parseFloat(document.getElementById('activity').value);
+    if (!age || !height || !weight) return;
+    let bmr = 10 * weight + 6.25 * height - 5 * age;
+    bmr += sex === 'h' ? 5 : -161;
+    const tdee = bmr * activity;
+    document.getElementById('bmr').textContent = Math.round(bmr).toLocaleString('fr-FR') + ' kcal';
+    document.getElementById('tdee').textContent = Math.round(tdee).toLocaleString('fr-FR') + ' kcal';
+    document.getElementById('goal-loss').textContent = Math.round(tdee * 0.85).toLocaleString('fr-FR') + ' kcal';
+    document.getElementById('goal-maintain').textContent = Math.round(tdee).toLocaleString('fr-FR') + ' kcal';
+    document.getElementById('goal-gain').textContent = Math.round(tdee * 1.15).toLocaleString('fr-FR') + ' kcal';
+
+    const tip = document.getElementById('tip');
+    let msg;
+    if (activity <= 1.2) {
+      msg = '<strong>Conseil —</strong> Même 15 à 20 minutes de marche par jour peuvent augmenter vos besoins et améliorer votre énergie générale.';
+    } else if (activity >= 1.725) {
+      msg = '<strong>Conseil —</strong> À ce niveau d\'activité, portez une attention particulière à l\'hydratation et au sommeil pour bien récupérer.';
+    } else {
+      msg = '<strong>Conseil —</strong> Répartissez ces calories sur 3 à 4 repas réguliers plutôt qu\'en un seul, pour un niveau d\'énergie plus stable.';
+    }
+    tip.innerHTML = msg;
+    tip.classList.add('visible');
+  }
+  ['age', 'height', 'weight', 'activity'].forEach(id => {
+    document.getElementById(id).addEventListener('input', calculate);
+    document.getElementById(id).addEventListener('change', calculate);
+  });
+  calculate();
+</script>
+
+</body>
+</html>

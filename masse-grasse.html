@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculateur de masse grasse — Corpia</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<!-- Google AdSense : remplace ca-pub-XXXXXXXXXXXXXXXX par ton identifiant éditeur une fois ton compte approuvé -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">
+      <img class="logo-mark" src="assets/logo-icon.png" alt="Corpia">
+      <span>Corpia</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Accueil</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" type="button">Nos outils</button>
+        <div class="nav-dropdown-menu">
+          <p class="nav-dropdown-cat">Nutrition &amp; énergie</p>
+          <a href="calories.html">Besoins caloriques</a>
+          <a href="eau.html">Eau à boire par jour</a>
+          <p class="nav-dropdown-cat">Corps &amp; forme physique</p>
+          <a href="poids-ideal.html">Poids idéal</a>
+          <a href="masse-grasse.html">Masse grasse</a>
+          <a href="frequence-cardiaque.html">Fréquence cardiaque</a>
+          <p class="nav-dropdown-cat">Grossesse</p>
+          <a href="grossesse-dpa.html">Date d'accouchement</a>
+          <a href="grossesse-ovulation.html">Ovulation</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header class="page-head">
+    <p class="kicker">Corps &amp; forme physique</p>
+    <h1>Quel est votre pourcentage de masse grasse ?</h1>
+    <p class="lede">À partir de quelques mesures au ruban, estimez votre taux de masse grasse avec la méthode utilisée par l'US Navy.</p>
+  </header>
+
+  <div class="layout">
+    <div>
+      <div class="field">
+        <label>Sexe</label>
+        <div class="toggle-group">
+          <button type="button" id="btn-h" class="active" onclick="setSex('h')">Homme</button>
+          <button type="button" id="btn-f" onclick="setSex('f')">Femme</button>
+        </div>
+      </div>
+      <div class="field">
+        <label for="height">Taille (cm)</label>
+        <input type="number" id="height" value="170" min="120" max="230">
+      </div>
+      <div class="field">
+        <label for="neck">Tour de cou (cm)</label>
+        <input type="number" id="neck" value="38" min="20" max="60">
+        <p class="field-hint">Mesuré juste sous la pomme d'Adam.</p>
+      </div>
+      <div class="field">
+        <label for="waist">Tour de taille (cm)</label>
+        <input type="number" id="waist" value="85" min="50" max="180">
+        <p class="field-hint">Mesuré au niveau du nombril.</p>
+      </div>
+      <div class="field" id="hip-field" style="display:none">
+        <label for="hip">Tour de hanches (cm)</label>
+        <input type="number" id="hip" value="95" min="50" max="180">
+        <p class="field-hint">Mesuré au point le plus large.</p>
+      </div>
+    </div>
+
+    <div class="panel">
+      <p class="panel-title">Votre estimation</p>
+      <p class="panel-sub">Méthode de circonférences corporelles (US Navy, 1984)</p>
+
+      <div class="metric-row big">
+        <span class="metric-label">Masse grasse estimée<small>En pourcentage du poids total</small></span>
+        <span class="metric-value" id="bodyfat">—</span>
+      </div>
+      <div class="tip-box" id="tip"></div>
+
+      <p class="disclaimer">Cette méthode est une estimation par circonférences, moins précise qu'une mesure par impédancemétrie ou DEXA-scan, mais suffisante pour suivre une évolution dans le temps.</p>
+    </div>
+  </div>
+
+  <div class="ad-slot">
+    <p class="ad-label">Publicité</p>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="XXXXXXXXXX"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <article>
+    <h2>Comment ce calcul fonctionne</h2>
+    <p>La méthode US Navy estime la masse grasse à partir du rapport entre le tour de taille (et de hanches pour les femmes), le tour de cou et la taille totale. Elle a été validée sur de larges populations et reste l'une des méthodes de terrain les plus fiables sans matériel spécialisé.</p>
+    <p>Pour un résultat fiable, mesurez-vous le matin, à jeun, avec un mètre ruban souple maintenu à plat sans le serrer.</p>
+
+    <h2>Questions fréquentes</h2>
+    <div class="faq-item">
+      <h3>Quel est un taux de masse grasse "normal" ?</h3>
+      <p>Les repères usuels se situent autour de 10 à 20 % pour les hommes et 18 à 28 % pour les femmes, selon l'âge et le niveau d'activité — ces plages varient d'une source à l'autre.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Pourquoi la mesure diffère-t-elle d'une balance impédancemètre ?</h3>
+      <p>Les balances à impédance sont sensibles à l'hydratation du moment et peuvent varier de plusieurs points d'une mesure à l'autre. Les deux méthodes restent des estimations.</p>
+    </div>
+  </article>
+
+  <div class="related">
+    <h2>Continuez avec ces outils</h2>
+    <div class="related-grid">
+      <a class="related-card" href="poids-ideal.html"><p class="cat">Forme physique</p><p class="name">Poids idéal</p></a>
+      <a class="related-card" href="frequence-cardiaque.html"><p class="cat">Forme physique</p><p class="name">Fréquence cardiaque cible</p></a>
+      <a class="related-card" href="calories.html"><p class="cat">Nutrition</p><p class="name">Besoins caloriques</p></a>
+    </div>
+  </div>
+  <div class="ad-slot">
+    <p class="ad-label">Publicité</p>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="XXXXXXXXXX"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <a class="nav-brand" href="index.html">
+          <img class="logo-mark" src="assets/logo-icon.png" alt="Corpia">
+          <span>Corpia</span>
+        </a>
+        <p class="footer-tagline">Des calculateurs simples pour mieux comprendre votre corps — nutrition, forme physique et grossesse.</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">Nutrition &amp; énergie</p>
+        <a href="calories.html">Besoins caloriques</a>
+        <a href="eau.html">Eau à boire par jour</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">Forme physique</p>
+        <a href="poids-ideal.html">Poids idéal</a>
+        <a href="masse-grasse.html">Masse grasse</a>
+        <a href="frequence-cardiaque.html">Fréquence cardiaque</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">Grossesse</p>
+        <a href="grossesse-dpa.html">Date d'accouchement</a>
+        <a href="grossesse-ovulation.html">Ovulation</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Corpia. Tous les résultats sont des estimations informatives et ne remplacent pas un avis médical professionnel.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  let sex = 'h';
+  function setSex(s) {
+    sex = s;
+    document.getElementById('btn-h').classList.toggle('active', s === 'h');
+    document.getElementById('btn-f').classList.toggle('active', s === 'f');
+    document.getElementById('hip-field').style.display = s === 'f' ? 'block' : 'none';
+    calculate();
+  }
+  function calculate() {
+    const height = parseFloat(document.getElementById('height').value) || 0;
+    const neck = parseFloat(document.getElementById('neck').value) || 0;
+    const waist = parseFloat(document.getElementById('waist').value) || 0;
+    const hip = parseFloat(document.getElementById('hip').value) || 0;
+    if (!height || !neck || !waist) return;
+
+    let bf;
+    if (sex === 'h') {
+      bf = 495 / (1.0324 - 0.19077 * Math.log10(waist - neck) + 0.15456 * Math.log10(height)) - 450;
+    } else {
+      if (!hip) return;
+      bf = 495 / (1.29579 - 0.35004 * Math.log10(waist + hip - neck) + 0.22100 * Math.log10(height)) - 450;
+    }
+    document.getElementById('bodyfat').textContent = bf.toLocaleString('fr-FR', {maximumFractionDigits: 1}) + ' %';
+
+    const tip = document.getElementById('tip');
+    let msg = '<strong>Conseil —</strong> Mesurez-vous toujours dans les mêmes conditions (matin, à jeun) pour suivre une évolution fiable dans le temps plutôt qu\'une valeur isolée.';
+    tip.innerHTML = msg;
+    tip.classList.add('visible');
+  }
+  ['height', 'neck', 'waist', 'hip'].forEach(id => {
+    document.getElementById(id).addEventListener('input', calculate);
+  });
+  calculate();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculateur d'eau à boire par jour — Corpia</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<!-- Google AdSense : remplace ca-pub-XXXXXXXXXXXXXXXX par ton identifiant éditeur une fois ton compte approuvé -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">
+      <img class="logo-mark" src="assets/logo-icon.png" alt="Corpia">
+      <span>Corpia</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Accueil</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" type="button">Nos outils</button>
+        <div class="nav-dropdown-menu">
+          <p class="nav-dropdown-cat">Nutrition &amp; énergie</p>
+          <a href="calories.html">Besoins caloriques</a>
+          <a href="eau.html">Eau à boire par jour</a>
+          <p class="nav-dropdown-cat">Corps &amp; forme physique</p>
+          <a href="poids-ideal.html">Poids idéal</a>
+          <a href="masse-grasse.html">Masse grasse</a>
+          <a href="frequence-cardiaque.html">Fréquence cardiaque</a>
+          <p class="nav-dropdown-cat">Grossesse</p>
+          <a href="grossesse-dpa.html">Date d'accouchement</a>
+          <a href="grossesse-ovulation.html">Ovulation</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header class="page-head">
+    <p class="kicker">Nutrition &amp; énergie</p>
+    <h1>Combien d'eau devriez-vous boire chaque jour ?</h1>
+    <p class="lede">Votre besoin en eau dépend de votre poids et de votre niveau d'activité. Ajustez les champs pour obtenir une estimation personnalisée.</p>
+  </header>
+
+  <div class="layout">
+    <div>
+      <div class="field">
+        <label for="weight">Poids (kg)</label>
+        <input type="number" id="weight" value="70" min="30" max="250">
+      </div>
+      <div class="field">
+        <label for="activity">Niveau d'activité</label>
+        <select id="activity">
+          <option value="0">Sédentaire — peu d'exercice</option>
+          <option value="400">Modérément actif — sport léger régulier</option>
+          <option value="800" selected>Actif — sport intense ou plusieurs fois/semaine</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="climate">Climat / saison</label>
+        <select id="climate">
+          <option value="0">Tempéré</option>
+          <option value="500">Chaud / été</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="panel">
+      <p class="panel-title">Votre besoin estimé</p>
+      <p class="panel-sub">Calcul basé sur 33 ml par kilo de poids corporel, ajusté à votre activité</p>
+
+      <div class="metric-row big">
+        <span class="metric-label">Eau recommandée<small>Par jour, toutes boissons et aliments riches en eau compris</small></span>
+        <span class="metric-value" id="water">—</span>
+      </div>
+      <div class="goals">
+        <div class="goal-row"><span class="goal-tag">Équivalent en verres (250 ml)</span><span class="goal-kcal" id="glasses">—</span></div>
+        <div class="goal-row"><span class="goal-tag">Équivalent en bouteilles (1 L)</span><span class="goal-kcal" id="bottles">—</span></div>
+      </div>
+      <div class="tip-box" id="tip"></div>
+
+      <p class="disclaimer">Cette estimation est informative. Les besoins réels varient selon la santé, la grossesse, l'allaitement ou certains traitements médicaux — demandez conseil à un professionnel de santé si besoin.</p>
+    </div>
+  </div>
+
+  <div class="ad-slot">
+    <p class="ad-label">Publicité</p>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="XXXXXXXXXX"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <article>
+    <h2>Comment ce calcul fonctionne</h2>
+    <p>La référence la plus utilisée consiste à multiplier le poids corporel par environ 33 ml. Ce résultat de base est ensuite augmenté selon l'activité physique, qui accroît les pertes hydriques par la transpiration, et selon le climat.</p>
+    <p>Une partie de cet apport provient de l'alimentation — fruits, légumes et soupes notamment — ce total n'implique donc pas de boire uniquement de l'eau pure.</p>
+
+    <h2>Questions fréquentes</h2>
+    <div class="faq-item">
+      <h3>Le café et le thé comptent-ils ?</h3>
+      <p>Oui, dans une mesure raisonnable. Ils contribuent à l'hydratation malgré leur légère action diurétique, sauf consommation excessive.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Boire plus d'eau fait-il maigrir ?</h3>
+      <p>L'eau n'a pas d'effet direct sur la perte de poids, mais elle peut favoriser une sensation de satiété et remplacer des boissons sucrées caloriques.</p>
+    </div>
+  </article>
+
+  <div class="related">
+    <h2>Continuez avec ces outils</h2>
+    <div class="related-grid">
+      <a class="related-card" href="calories.html"><p class="cat">Nutrition</p><p class="name">Besoins caloriques</p></a>
+      <a class="related-card" href="frequence-cardiaque.html"><p class="cat">Forme physique</p><p class="name">Fréquence cardiaque cible</p></a>
+      <a class="related-card" href="poids-ideal.html"><p class="cat">Forme physique</p><p class="name">Poids idéal</p></a>
+    </div>
+  </div>
+  <div class="ad-slot">
+    <p class="ad-label">Publicité</p>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="XXXXXXXXXX"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <a class="nav-brand" href="index.html">
+          <img class="logo-mark" src="assets/logo-icon.png" alt="Corpia">
+          <span>Corpia</span>
+        </a>
+        <p class="footer-tagline">Des calculateurs simples pour mieux comprendre votre corps — nutrition, forme physique et grossesse.</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">Nutrition &amp; énergie</p>
+        <a href="calories.html">Besoins caloriques</a>
+        <a href="eau.html">Eau à boire par jour</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">Forme physique</p>
+        <a href="poids-ideal.html">Poids idéal</a>
+        <a href="masse-grasse.html">Masse grasse</a>
+        <a href="frequence-cardiaque.html">Fréquence cardiaque</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">Grossesse</p>
+        <a href="grossesse-dpa.html">Date d'accouchement</a>
+        <a href="grossesse-ovulation.html">Ovulation</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Corpia. Tous les résultats sont des estimations informatives et ne remplacent pas un avis médical professionnel.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function calculate() {
+    const weight = parseFloat(document.getElementById('weight').value) || 0;
+    const activity = parseFloat(document.getElementById('activity').value);
+    const climate = parseFloat(document.getElementById('climate').value);
+    if (!weight) return;
+    const ml = weight * 33 + activity + climate;
+    const liters = ml / 1000;
+    document.getElementById('water').textContent = liters.toLocaleString('fr-FR', {maximumFractionDigits: 1}) + ' L';
+    document.getElementById('glasses').textContent = Math.round(ml / 250) + ' verres';
+    document.getElementById('bottles').textContent = liters.toLocaleString('fr-FR', {maximumFractionDigits: 1}) + ' bouteilles';
+
+    const tip = document.getElementById('tip');
+    let msg;
+    if (climate > 0) {
+      msg = '<strong>Conseil —</strong> Par forte chaleur, buvez par petites quantités régulières plutôt qu\'en grande quantité d\'un coup, pour une meilleure absorption.';
+    } else if (activity >= 800) {
+      msg = '<strong>Conseil —</strong> Pensez à boire avant, pendant et après l\'effort — la soif apparaît déjà après le début de la déshydratation.';
+    } else {
+      msg = '<strong>Conseil —</strong> Un verre d\'eau au réveil et un avant chaque repas suffisent souvent à couvrir une bonne partie de ce total.';
+    }
+    tip.innerHTML = msg;
+    tip.classList.add('visible');
+  }
+  ['weight', 'activity', 'climate'].forEach(id => {
+    document.getElementById(id).addEventListener('input', calculate);
+    document.getElementById(id).addEventListener('change', calculate);
+  });
+  calculate();
+</script>
+
+</body>
+</html>
